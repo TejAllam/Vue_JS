@@ -7,18 +7,53 @@
 
     <body>
 
-        <div id="root">
-            <input type="text" id="input" v-model="message">
+    <h3> Vue JS </h3>
 
-            <p> The message is {{message}}  </p>
+        <h4> Data Binding </h4>
+        <div id="root">
+
+            <p> <input type="text" id="input" v-model="message"> --  The message is : {{message}}  </p>
+            <p> Item is : {{item}}</p>
         </div>
+        <p> -----------------------</p>
+
+        <h4> Arrays </h4>
+        <div id="array">
+            <p> Using template {{ }}</p>
+            <ul>
+                <li v-for="name in names">
+                        {{name}}
+                </li>
+            </ul>
+
+            <p> Using v-text<p>
+                <ul >
+                    <li v-for="name in names" v-text="name">
+                        </li> 
+                    <ul>
+
+                        <input type="text">
+                        <button id="button">Add Name</button>
+
+
+
+        </div>
+        <p> -----------------------</p>
 
         <script>
 
-             new Vue({
+            var app_1 =  new Vue({
                  el: '#root',
                  data : {
-                     message: 'Hello World from Tej'
+                     message: 'Hello World from Tej : Dynamic',
+                     item: "banana : Static"
+                    }
+             })
+
+            var app_2 =   new Vue({
+                 el: '#array',
+                 data : {
+                    names: ['john', 'rebecca', 'jack']
                     }
              })
              </script>
